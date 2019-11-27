@@ -1,0 +1,49 @@
+.flex-container {
+    white-space: nowrap;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-right {
+    animation-name: slideRight;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /* animation: slide 40s ease-in infinite;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: slide; */
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(1000px);
+    }
+}
+
+.slide-left {
+    animation-name: slideLeft;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-1000px);
+    }
+}

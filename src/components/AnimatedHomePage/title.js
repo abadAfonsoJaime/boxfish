@@ -9,8 +9,8 @@ function Title() {
     >
       {props => (
         <div style={props}>
-          <div style={{ fontSize: "10rem" }}>
-            Engineering <br /> without
+          <div>
+            <p style={{ fontSize: "3rem" }}>Engineering</p>
           </div>
         </div>
       )}
