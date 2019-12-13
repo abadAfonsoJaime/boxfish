@@ -1,34 +1,51 @@
 import React from "react";
-import { Spring } from "react-spring/renderprops";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
-  gradientLetters: {
-    //background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)"
+import { createStyles, makeStyles } from "@material-ui/core/styles";
 
-    // set the background color
-    background: "linear-gradient(to right, #ff8a00 0%, #da1b60 100%)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent"
-  }
-});
+const useStyles = makeStyles(theme =>
+  createStyles({
+    gradientLetters: {
+      //background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)"
+
+      // set the background color
+      background: "linear-gradient(to right, #9fc0c8 0%, #D1BBC3 100%)",
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
+    },
+    fluidDesign: {
+      [theme.breakpoints.down("xs")]: {
+        fontSize: "44px"
+      },
+      [theme.breakpoints.down('sm')]: {
+        fontSize: "53px"
+      },
+      [theme.breakpoints.down('md')]: {
+        fontSize: "85px"
+      },
+      [theme.breakpoints.up("md")]: {
+        fontSize: "115px"
+      },
+    }
+  })
+);
 
 function Bullshit() {
   const classes = useStyles();
   return (
-    <Spring
-      from={{ opacity: 0 }}
-      to={{ opacity: 1 }}
-      config={{ delay: 1000, duration: 1000 }}
-    >
-      {props => (
-        <div style={props}>
-          <div style={{ fontSize: "10rem" }}>
-            <p className={classes.gradientLetters}>bullshit</p>
-          </div>
-        </div>
-      )}
-    </Spring>
+    <div className={classes.fluidDesign}>
+      <span className={`${classes.gradientLetters} strike`}>bullshit</span>
+    </div>
+    // <Spring
+    //   from={{ textDecoration: "none" }}
+    //   to={{ textDecoration: "line-through" }}
+    //   config={{ delay: 3000, duration: 10000 }}
+    // >
+    //   {props => (
+    //     <div style={props} className={classes.fluidDesign}>
+    //       <span className={classes.gradientLetters}>bullshit</span>
+    //     </div>
+    //   )}
+    // </Spring>
   );
 }
 

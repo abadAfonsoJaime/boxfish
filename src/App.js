@@ -1,18 +1,20 @@
 import React from "react";
 
-// import logo from "./logo.svg";
-// import "./App.css";
+import { Container, CssBaseline } from "@material-ui/core";
 import Navbar from "./components/NavBar";
 import NavigationRouter from "./navigation/NavigationRouter";
 
 function App() {
   return (
     <>
+      <CssBaseline />
       <header>
         <Navbar />
       </header>
       <main style={{ marginTop: 100 }}>
-        <NavigationRouter />
+        <Container maxWidth="md">
+          <NavigationRouter />
+        </Container>  
       </main>
     </>
   );

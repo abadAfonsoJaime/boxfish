@@ -29,7 +29,7 @@ function Navbar(props) {
     <AppBar position="fixed" className={classes.navbar}>
       <Toolbar>
         <div>
-          <Link to="/">
+          <a href="/">
             <span>
               <img
                 style={{ backgroundColor: "transparent" }}
@@ -39,7 +39,7 @@ function Navbar(props) {
                 alt="BoxFish"
               />
             </span>
-          </Link>
+          </a>
         </div>
 
         <ToolbarMenu

@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import "./index.css";
 import App from "./App";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { CssBaseline } from "@material-ui/core";
+
 import { BrowserRouter } from "react-router-dom";
 
 const customTheme = createMuiTheme({
@@ -15,20 +15,35 @@ const customTheme = createMuiTheme({
       contrastText: "#eceff1"
     },
     secondary: {
-      main: "#c8e6c9",
+      main: "#fff3e0", //"#c8e6c9",
       light: "#69f0ae",
       dark: "#a5d6a7"
     },
     background: {
-      default: "#fff3e0",
+      // default: "#fff3e0",
+      default: "#fff",
       paper: "#ffe0b2"
     }
-  }
+  },
+  typography: {
+    fontFamily: [
+      "Poppins",
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
 });
 
 render(
   <MuiThemeProvider theme={customTheme}>
-    <CssBaseline />
     <BrowserRouter>
       <App />
     </BrowserRouter>

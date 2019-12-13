@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import AbsoluteWrapper from "../components/AbsoluteWrapper";
+
 import AnimatedHomePage from "../components/AnimatedHomePage";
 import "../styles/animations.css";
 
@@ -12,30 +14,29 @@ const useHover = () => {
   const leave = () => setValue(false);
   // Simple effect, just bind and unbind the event handlers
 	useEffect(() => {
-    const node = ref.current;
-    if (node) {
-      node.addEventListener("mouseenter", enter)
-		  node.addEventListener("mouseleave", leave)
+    const el = ref.current;
+    if (el) {
+      el.addEventListener("mouseenter", enter)
+		  el.addEventListener("mouseleave", leave)
 		  return () => {
-			  node.removeEventListener("mouseenter", enter);
-			  node.removeEventListener("mouseleave", leave);
+			  el.removeEventListener("mouseenter", enter);
+			  el.removeEventListener("mouseleave", leave);
       };
     }
-  }, [ref.current] // Recall only if ref changes)
-  );
+  });
   return [ref, value];
 }
+
+
 
 function Home() {
 	const [softwareRef, isSoftwareHovered] = useHover();
 	const [hardwareRef, isHardwareHovered] = useHover();
 	const [webRef, isWebHovered] = useHover();
   return (
-    <>
+    <AbsoluteWrapper>
+
       <AnimatedHomePage />
-      <div style={{ opacity: 1, transform: "matrix(1, 0, 0, 1, 0, 0)" }}>
-        without
-      </div>
       <div
         ref={softwareRef}
         className={isSoftwareHovered ? "slide-left" : "slide-right"}
@@ -75,7 +76,7 @@ function Home() {
           </span>
         </p>
       </div>
-    </>
+    </AbsoluteWrapper>
   );
 };
 
