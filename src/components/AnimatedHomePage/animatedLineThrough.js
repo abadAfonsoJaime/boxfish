@@ -1,34 +1,22 @@
-import React from 'react';
-import { useSpring, animated } from 'react-spring'
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import "../../styles/lineThrough.css";
 
-const useStyles = createStyles({
-    hr: {
-        position: "fixed",
-        borderColor: "red",
-        bordeWidth: "1px"
+function AnimatedLineThrough({ background, text }) {
+  const useStyles = makeStyles({
+    gradientLetters: {
+      background: background,
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent"
     }
-})
-
-function AnimatedLineThrough() {
-    //const classes = useStyles();
-    const lineThrough = useSpring({
-        from: { left: '0%', width: "0%" },
-        to: {
-            borderStyle: "solid",
-            width: '300px',
-            position: "z-Index",
-            borderColor: "red",
-            borderWidth: "1px"
-        },
-        config: { duration: 3000}
-    })
-    return (
-        <div>
-            bullshit<animated.div style={lineThrough}></animated.div>
-        </div>
-        
-    )
+  });
+  console.log("background prop: ", background);
+  const classes = useStyles();
+  return (
+    <div>
+      <span className={`${classes.gradientLetters} strike`}>{text}</span>
+    </div>
+  );
 }
 
-export default AnimatedLineThrough
+export default AnimatedLineThrough;

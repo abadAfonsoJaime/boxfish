@@ -1,5 +1,5 @@
 .flex-container {
-    white-space: nowrap;
+    white-space: nowrap; 
     font-size: 3rem;
     display: flex;
     align-items: center;
@@ -11,15 +11,6 @@
     animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    /* animation: slide 40s ease-in infinite;
-    animation-duration: 20s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: slide; */
 }
 
 @keyframes slideRight {
@@ -36,7 +27,6 @@
     animation-duration: 20s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
 }
 
 @keyframes slideLeft {

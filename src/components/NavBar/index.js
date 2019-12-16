@@ -23,13 +23,13 @@ const useStyles = makeStyles(theme =>
   })
 );
 
-function Navbar(props) {
+function Navbar() {
   const classes = useStyles();
   return (
     <AppBar position="fixed" className={classes.navbar}>
       <Toolbar>
         <div>
-          <a href="/">
+          <Link to="/">
             <span>
               <img
                 style={{ backgroundColor: "transparent" }}
@@ -39,7 +39,7 @@ function Navbar(props) {
                 alt="BoxFish"
               />
             </span>
-          </a>
+          </Link>
         </div>
 
         <ToolbarMenu

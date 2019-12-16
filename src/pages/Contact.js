@@ -1,12 +1,11 @@
 import React from "react";
+import CustomParticles from "../components/AnimatedHomePage/customParticles";
 import AbsoluteWrapper from "../components/AbsoluteWrapper";
 
 const Contact = () => {
   return (
     <AbsoluteWrapper>
-      <div>
-        <h1>Contact</h1>
-      </div>
+      <CustomParticles />
     </AbsoluteWrapper>
   );
 };

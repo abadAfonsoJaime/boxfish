@@ -5,16 +5,16 @@ const useStyles = makeStyles(theme =>
   createStyles({
     fluidTypgraphy: {
       [theme.breakpoints.down("sm")]: {
-        fontSize: "44px"
+        fontSize: "27px"
       },
       [theme.breakpoints.up("sm")]: {
-        fontSize: "53px"
+        fontSize: "34px"
       },
       [theme.breakpoints.up("md")]: {
-        fontSize: "85px"
+        fontSize: "40px"
       },
       [theme.breakpoints.up("lg")]: {
-        fontSize: "115px"
+        fontSize: "50px"
       }
     }
   })

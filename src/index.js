@@ -28,18 +28,18 @@ const customTheme = createMuiTheme({
   typography: {
     fontFamily: [
       "Poppins",
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-  },
+      '"Segoe UI Symbol"'
+    ].join(",")
+  }
 });
 
 render(
