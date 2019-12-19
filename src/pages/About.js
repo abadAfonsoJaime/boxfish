@@ -1,30 +1,134 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
+
+// import AbsoluteWrapper from "../components/AbsoluteWrapper";
+import Title from "../components/AnimatedHomePage/title";
+import Subtitle from "../components/AnimatedHomePage/subtitle";
+import AnimatedLineThrough from "../components/AnimatedHomePage/animatedLineThrough";
+import CustomParticles from "../components/AnimatedHomePage/customParticles";
 import "../styles/customCSS.css";
-const Bullshit = () => {
-  const lineThrough = useSpring({
+
+const About = ({ height }) => {
+  const useStyles = makeStyles(theme =>
+    createStyles({
+      titleBox: {
+        //width: "100%",
+        [theme.breakpoints.down("sm")]: {
+          height: "70px"
+        },
+        [theme.breakpoints.up("sm")]: {
+          height: "85px"
+        },
+        [theme.breakpoints.up("md")]: {
+          height: "100px"
+        },
+        [theme.breakpoints.up("lg")]: {
+          height: "120px",
+          marginBottom: "3px"
+        },
+        borderStyle: "solid",
+        borderColor: "blue",
+        borderWidth: "2px"
+      },
+      container: {
+        [theme.breakpoints.down("sm")]: {
+          width: "90%",
+          margin: "5px auto"
+        },
+        [theme.breakpoints.between("sm", "md")]: {
+          width: "80%",
+          margin: "10px auto"
+        },
+        [theme.breakpoints.up("md")]: {
+          width: "70%",
+          margin: "15px auto"
+        },
+        borderStyle: "solid",
+        borderRadius: 16,
+        borderColor: theme.palette.primary.main
+      },
+      content: {
+        display: "flex",
+        flexWrap: "wrap",
+        [theme.breakpoints.down("md")]: {
+          justifyContent: "space-around"
+        },
+        [theme.breakpoints.between("md", "lg")]: {
+          justifyContent: "space-between"
+        },
+        [theme.breakpoints.up("lg")]: {
+          justifyContent: "space-around"
+        },
+        alignItems: "center"
+      }
+    })
+  );
+  const classes = useStyles();
+  const growLetters = useSpring({
     from: {
-      width: "0%",
-      top: "-17%",
-      left: "0",
-      height: "2px",
-      background: "linear-gradient(to right, #9fc0c8 0%, #D1BBC3 100%)"
+      // innerHeight: 0,
+      //color: "#8fa5b6",
+      // transform: "matrix(0,0,0,0,0,0)"
+      top: 0,
+      transform: "scaleY(0)"
     },
     to: {
-      width: "100%"
+      // innerHeight: 80,
+      // transform: "matrix(1,0,0,1,0,0)"
+      top: 10,
+      transform: "scaleY(1)"
     },
-    config: { duration: 2000 },
-    delay: 2000
+    config: { duration: 400 },
+    delay: 600
   });
-
+  // const AnimatedTitle = animated(Title);
   return (
-    <div className="container">
-      <span className="texto">
-        bullshit
-        <animated.p style={lineThrough} className="overIndex"></animated.p>
-      </span>
+    <div className={classes.container}>
+      <div className={classes.content}>
+        <div
+          style={{
+            //width: "100%",
+            height: "100%",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignitems: "center"
+          }}
+        >
+          <animated.div style={growLetters} className={classes.titleBox}>
+            <Title>
+              <span>engineering</span>
+            </Title>
+          </animated.div>
+          <animated.div style={growLetters} className={classes.titleBox}>
+            <Title>
+              <span>without</span>
+            </Title>
+          </animated.div>
+          <animated.div style={growLetters} className={classes.titleBox}>
+            <Title>
+              <AnimatedLineThrough
+                text="bullshit"
+                background="linear-gradient(to right, #9fc0c8 0%, #D1BBC3 100%)"
+              />
+            </Title>
+          </animated.div>
+          <animated.div style={growLetters}>
+            <Subtitle>
+              <span style={{ wordBreak: "break-word" }}>
+                complete agile solutions
+              </span>
+            </Subtitle>
+          </animated.div>
+        </div>
+        <div>
+          <CustomParticles />
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Bullshit;
+export default About;

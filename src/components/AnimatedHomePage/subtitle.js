@@ -15,7 +15,8 @@ const useStyles = makeStyles(theme =>
       },
       [theme.breakpoints.up("lg")]: {
         fontSize: "50px"
-      }
+      },
+      paddingTop: "5%"
     }
   })
 );

@@ -3,7 +3,7 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme =>
   createStyles({
-    fluidTypgraphy: {
+    fluidTypography: {
       [theme.breakpoints.down("sm")]: {
         fontSize: "44px"
       },
@@ -21,5 +21,9 @@ const useStyles = makeStyles(theme =>
 );
 export default function Title({ children }) {
   const classes = useStyles();
-  return <div className={classes.fluidTypgraphy}>{children}</div>;
+  return <div className={classes.fluidTypography}>{children}</div>;
 }
+// export default function Title({ text }) {
+//   const classes = useStyles();
+//   return <span className={classes.fluidTypography}>{text}</span>;
+// }

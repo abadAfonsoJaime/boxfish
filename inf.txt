@@ -1,0 +1,15 @@
+src="https://boxfish.studio/wp-content/uploads/2018/10/boxfish_studio_founders.png"
+src="https://boxfish.studio/wp-content/uploads/2018/08/fazua_black150.png"
+https://boxfish.studio/wp-content/uploads/2018/08/synapitcon_black150.gif
+https://boxfish.studio/wp-content/uploads/2019/06/3dforscience_logo_black150.png
+https://boxfish.studio/wp-content/uploads/2019/06/thirdbridge_black_150.png
+https://boxfish.studio/wp-content/uploads/2019/06/iotafoundation90x90.png
+src="https://boxfish.studio/wp-content/uploads/2019/10/lookiero.png"
+
+background-image: url("/wp-content/uploads/2018/07/software.png"); --> https://boxfish.studio//wp-content/uploads/2018/07/software.png
+background-image: url("/wp-content/uploads/2018/07/software.png);  -->  https://boxfish.studio//wp-content/uploads/2018/07/software.png
+background-image: url("/wp-content/uploads/2018/07/web.png"); 	   --> https://boxfish.studio/wp-content/uploads/2018/07/web.png
+
+complete, agile solutions --> 27 34 38 45
+<h2> --> 36 60 70
+<p> 17...

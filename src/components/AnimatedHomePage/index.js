@@ -4,9 +4,9 @@ import { useTrail, animated } from "react-spring";
 
 import Title from "./title";
 import Subtitle from "./subtitle";
-import AnimatedLineThrough from "./animatedLineThrough";
-import HoverLetters from "./hoverLetters";
-import "../../styles/lineThrough.css";
+import Bullshit from "./bullshit";
+
+// import "../../styles/lineThrough.css";
 
 function AnimatedHomePage() {
   const classes = useStyles();
@@ -18,7 +18,7 @@ function AnimatedHomePage() {
       <span>without</span>
     </Title>,
     <Title>
-      <AnimatedLineThrough
+      <Bullshit
         text="bullshit"
         background="linear-gradient(to right, #9fc0c8 0%, #D1BBC3 100%)"
       />
@@ -38,15 +38,17 @@ function AnimatedHomePage() {
   });
 
   return (
-    <>
+    <div className={classes.container}>
       <div className={classes.mainTrails}>
         <div className={classes.trailContainer}>
           {trail.map(({ x, ...rest }, index) => (
             <animated.div
-              key={items[index]}
+              key={items.indexOf(items[index])}
               className={classes.textTrails}
-              //style={{ ...rest, transform: x.interpolate(x => `translate3d(0,${x}px,0)`) }}
-              style={{ ...rest }}
+              style={{
+                ...rest,
+                transform: x.interpolate(x => `translate3d(0,${x}px,0)`)
+              }}
             >
               {/* <div className={classes.fluidDesign}>{items[index]}</div> */}
               {items[index]}
@@ -54,27 +56,18 @@ function AnimatedHomePage() {
           ))}
         </div>
       </div>
-      <HoverLetters
-        hoverClasses="slide-left"
-        mouseOutClasses="slide-right"
-        letters={[...new Array(100)].map(() => "software").join(" ")}
-      />
-      <HoverLetters
-        hoverClasses="slide-left"
-        mouseOutClasses="slide-right"
-        letters={[...new Array(100)].map(() => "hardware").join(" ")}
-      />
-      <HoverLetters
-        hoverClasses="slide-right"
-        mouseOutClasses="slide-left"
-        letters={[...new Array(200)].map(() => "web").join(" ")}
-      />
-    </>
+    </div>
   );
 }
 
 const useStyles = makeStyles(theme =>
   createStyles({
+    container: {
+      display: "flex",
+      fontSize: "3rem",
+      alignItems: "center",
+      justifyContent: "flexStart"
+    },
     fluidDesign: {
       [theme.breakpoints.down("sm")]: {
         fontSize: "44px"
@@ -95,13 +88,13 @@ const useStyles = makeStyles(theme =>
       height: "100%",
       overflow: "hidden",
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "flex-start",
       alignitems: "center"
     },
     trailContainer: {
-      overflow: "hidden",
-      marginTop: "100px",
-      marginBottom: "100px"
+      overflow: "hidden"
+      // marginTop: "200px",
+      // marginBottom: "150px"
     },
     textTrails: {
       position: "relative",

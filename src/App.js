@@ -11,10 +11,12 @@ function App() {
       <header>
         <Navbar />
       </header>
-      <main style={{ marginTop: 100 }}>
-        <Container maxWidth="md">
-          <NavigationRouter />
-        </Container>  
+      <main
+        style={{ marginTop: 100, backgroundColor: "yellow", width: "100%" }}
+      >
+        {/* <Container maxWidth="md"> */}
+        <NavigationRouter />
+        {/* </Container>   */}
       </main>
     </>
   );
