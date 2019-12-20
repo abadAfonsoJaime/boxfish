@@ -6,10 +6,10 @@ import { About, Career, Contact, Home, NotFound, Work } from "../pages";
 function NavigationRouter() {
   const { location } = useContext(__RouterContext);
   const transitions = useTransition(location, location => location.pathname, {
-    from: { opacity: 0, transform: "translate(100%, 0)"},
+    from: { opacity: 0, transform: "translate(100%, 0)" },
     enter: { opacity: 1, transform: "translate(0%, 0)" },
-    leave: { opacity: 0, transform: "translate(-50%, 0)"}
-  })
+    leave: { opacity: 0, transform: "translate(-50%, 0)" }
+  });
   return (
     <>
       {transitions.map(({ item, props, key }) => (
@@ -25,7 +25,6 @@ function NavigationRouter() {
           </Switch>
         </animated.div>
       ))}
-      
     </>
   );
 }

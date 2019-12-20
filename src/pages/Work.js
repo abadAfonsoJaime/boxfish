@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../styles/ex.css";
+//import "../styles/ex.css";
 import AbsoluteWrapper from "../components/AbsoluteWrapper";
 import AnimatedHomePage from "../components/AnimatedHomePage";
 

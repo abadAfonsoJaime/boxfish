@@ -36,8 +36,8 @@ function CustomParticles() {
 
   return (
     <Particles
-      width="200px"
-      height="300px"
+      width="100%"
+      height="500px"
       className="wrap"
       params={configParticles}
     />
