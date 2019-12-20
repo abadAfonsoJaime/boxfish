@@ -1,22 +1,20 @@
 import React from "react";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import ToolbarMenuIcon from "./ToolbarMenuIcon";
 
-const useStyles = makeStyles(theme =>
-  createStyles({
-    root: {
-      // Moving Menu to the right side
-      position: "absolute",
-      right: 0
-    },
-    // hide tabs
-    tabsBar: {
-      [theme.breakpoints.down("xs")]: {
-        display: "none"
-      }
+const useStyles = makeStyles(theme => ({
+  root: {
+    // Moving Menu to the right side
+    position: "absolute",
+    right: 0
+  },
+  // hide tabs
+  tabsBar: {
+    [theme.breakpoints.down("xs")]: {
+      display: "none"
     }
-  })
-);
+  }
+}));
 
 function ToolbarMenu(props) {
   const classes = useStyles();

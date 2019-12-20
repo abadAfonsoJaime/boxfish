@@ -1,26 +1,8 @@
-// import React from "react";
-// import { useScrollTrigger } from "@material-ui/core";
-
-// const ElevatedScrollableAppBar = ({ children, window }) => {
-//   const trigger = useScrollTrigger({
-//     disableHysteresis: true,
-//     threshold: 0,
-//     target: window ? window() : undefined
-//   });
-
-//   return React.cloneElement(children, {
-//     elevation: trigger ? 4 : 0
-//   });
-// };
-
-// export default ElevatedScrollableAppBar;
-
 import React from "react";
 import { useScrollTrigger, Zoom } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-function ScrollTop(props) {
-  const { children, window } = props;
+function ScrollTop({ children }) {
   const useStyles = makeStyles(theme => ({
     root: {
       position: "fixed",
@@ -31,17 +13,14 @@ function ScrollTop(props) {
   const classes = useStyles();
 
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
     disableHysteresis: true,
     threshold: 100
   });
 
   const handleClick = event => {
-    console.log("Event --> ", event);
     const anchor = (event.target.ownerDocument || document).querySelector(
       "#back-to-top-anchor"
     );
-
     if (anchor) {
       anchor.scrollIntoView({ behavior: "smooth", block: "center" });
     }

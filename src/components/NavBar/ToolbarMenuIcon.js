@@ -4,18 +4,16 @@ import { makeStyles, createStyles } from "@material-ui/core/styles";
 import { Menu, IconButton } from "@material-ui/core";
 import { Menu as MenuIcon } from "@material-ui/icons";
 
-const useStyles = makeStyles(theme =>
-  createStyles({
-    // Hide Hamburguer Icon
-    buttonCollapse: {
-      [theme.breakpoints.up("sm")]: {
-        display: "none"
-      },
-      margin: "10px",
-      boxShadow: "none"
-    }
-  })
-);
+const useStyles = makeStyles(theme => ({
+  // Hide Hamburguer Icon
+  buttonCollapse: {
+    [theme.breakpoints.up("sm")]: {
+      display: "none"
+    },
+    margin: "10px",
+    boxShadow: "none"
+  }
+}));
 
 function ToolbarMenuIcon(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -39,7 +37,7 @@ function ToolbarMenuIcon(props) {
   console.log("anchorEl: ", anchorEl);
   return (
     <div className={classes.buttonCollapse}>
-      <IconButton onClick={handleMenu} color="inherit" aria-label="Menu">
+      <IconButton onClick={handleMenu} color="secondary" aria-label="Menu">
         <MenuIcon />
       </IconButton>
 

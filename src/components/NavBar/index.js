@@ -6,9 +6,10 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 import ScrollTop from "./ScrollTop";
 import ToolbarContent from "./ToolbarContent";
+/* REACT ROUTER NAVIGATION */
 import NavigationRouter from "../../navigation/NavigationRouter";
 
-export default function BackToTop(props) {
+export default function Navbar(props) {
   const useStyles = makeStyles({
     navbar: {
       padding: "10px 20px 10px 20px"
@@ -23,11 +24,17 @@ export default function BackToTop(props) {
         </AppBar>
       </header>
       <Toolbar id="back-to-top-anchor" />
-      <main style={{ marginTop: 100 }}>
+      {/* REACT ROUTER NAVIGATION */}
+      <main style={{ marginTop: 50 }}>
         <NavigationRouter />
       </main>
+      {/* Button for scrolling back to top */}
       <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
+        <Fab
+          // color={`${theme.palette.secondary.contastText}`}
+          color="secondary"
+          aria-label="scroll back to top"
+        >
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

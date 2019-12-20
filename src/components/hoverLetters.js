@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import "../../styles/animatedLetters.css";
+// import logo from "../../logo.png";
 
-function HoverLetters({ hoverClasses, mouseOutClasses, letters }) {
+import "../styles/animatedLetters.css";
+
+function HoverLetters({ hoverClasses, mouseOutClasses, letters, image }) {
   /********************* Hover Hook **********************/
   const useHover = () => {
     // Reference to the element we're listen for events from
@@ -31,33 +33,50 @@ function HoverLetters({ hoverClasses, mouseOutClasses, letters }) {
 
   /******************** CSS Styles *********************/
 
-  const useStyles = makeStyles({
+  const useStyles = makeStyles(theme => ({
     lettersContainer: {
+      cursor: "pointer",
       whiteSpace: "nowrap",
-      font: "2.5rem",
+      fontSize: "2.5rem",
       display: "flex",
       alignItems: "center",
       justifyContent: "center"
     },
     showImage: {
-      width: "300px",
-      height: "300px"
-      //backgroundImage: "url(/wp-content/uploads/2018/07/software.png)"
+      position: "absolute",
+      zIndex: 2,
+      bottom: theme.spacing(20),
+      right: theme.spacing(10)
+    },
+    hideImage: {
+      display: "none"
     }
-  });
+  }));
   const classes = useStyles();
 
   /******************** Render Method *********************/
   const [lettersRef, areLettersHovered] = useHover();
+  const [imageRef, isImageHovered] = useHover();
   return (
-    <div
-      ref={lettersRef}
-      className={areLettersHovered ? hoverClasses : mouseOutClasses}
-    >
-      <p className={classes.lettersContainer}>
-        <span>{letters}</span>
-      </p>
-      <div className={areLettersHovered ? classes.showImage : ""}></div>
+    <div style={{ maxWidth: "100%" }}>
+      <div
+        ref={lettersRef}
+        className={areLettersHovered ? hoverClasses : mouseOutClasses}
+      >
+        <p className={classes.lettersContainer}>
+          <span>{letters}</span>
+        </p>
+      </div>
+      <div
+        ref={imageRef}
+        className={
+          areLettersHovered || isImageHovered
+            ? classes.showImage
+            : classes.hideImage
+        }
+      >
+        <img src={image} alt="software" width="425.6" height="348.4" />
+      </div>
     </div>
   );
 }
