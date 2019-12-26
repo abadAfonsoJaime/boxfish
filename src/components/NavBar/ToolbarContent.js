@@ -29,7 +29,6 @@ function ToolbarContent() {
             </span>
           </Link>
         </div>
-
         <ToolbarMenu
           render={collapsed => {
             console.log("collapsed --> ", collapsed);

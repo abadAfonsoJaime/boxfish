@@ -1,5 +1,4 @@
 import React from "react";
-
 import Particles from "react-particles-js";
 
 function CustomParticles() {
@@ -38,7 +37,7 @@ function CustomParticles() {
   return (
     <Particles
       width="100%"
-      height="290px"
+      height="390px"
       className="wrap"
       params={configParticles}
     />

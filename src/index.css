@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100&display=swap");
 
 body {
-  /* avoid horizontal scroll caused for the hoverLetters component */
-  overflow-x: hidden;
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

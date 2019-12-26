@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-// import logo from "../../logo.png";
-
 import "../styles/animatedLetters.css";
 
 function HoverLetters({ hoverClasses, mouseOutClasses, letters, image }) {
@@ -35,17 +33,17 @@ function HoverLetters({ hoverClasses, mouseOutClasses, letters, image }) {
 
   const useStyles = makeStyles(theme => ({
     lettersContainer: {
+      marginTop: "100px",
       cursor: "pointer",
       whiteSpace: "nowrap",
-      fontSize: "2.5rem",
+      fontSize: "1.5rem",
       display: "flex",
       alignItems: "center",
       justifyContent: "center"
     },
     showImage: {
       position: "absolute",
-      zIndex: 2,
-      bottom: theme.spacing(20),
+      top: theme.spacing(-13),
       right: theme.spacing(10)
     },
     hideImage: {
@@ -58,7 +56,7 @@ function HoverLetters({ hoverClasses, mouseOutClasses, letters, image }) {
   const [lettersRef, areLettersHovered] = useHover();
   const [imageRef, isImageHovered] = useHover();
   return (
-    <div style={{ maxWidth: "100%" }}>
+    <div style={{ maxWidth: "100%", position: "relative" }}>
       <div
         ref={lettersRef}
         className={areLettersHovered ? hoverClasses : mouseOutClasses}
@@ -75,7 +73,7 @@ function HoverLetters({ hoverClasses, mouseOutClasses, letters, image }) {
             : classes.hideImage
         }
       >
-        <img src={image} alt="software" width="425.6" height="348.4" />
+        <img src={image} alt="image" width="425.6" height="348.4" />
       </div>
     </div>
   );

@@ -6,8 +6,6 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import { BrowserRouter } from "react-router-dom";
 
-// import ScrollToTopLeft from "./components/ScrollToTopLeft";
-
 const customTheme = createMuiTheme({
   palette: {
     primary: {
@@ -48,7 +46,6 @@ const customTheme = createMuiTheme({
 render(
   <MuiThemeProvider theme={customTheme}>
     <BrowserRouter>
-      {/* <ScrollToTopLeft /> */}
       <App />
     </BrowserRouter>
   </MuiThemeProvider>,

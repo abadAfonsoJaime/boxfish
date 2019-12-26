@@ -1,0 +1,27 @@
+button#animatedButton {
+  font-weight: bold;
+  color: #9fc0c8;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #d1bbc3;
+  background-color: #fff;
+  padding: 10px 20px;
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+}
+
+button#animatedButton:hover {
+  border-width: 0;
+  font-weight: bold;
+  transform: scale(1.2);
+  cursor: pointer;
+  color: #e5e5e5;
+  background: linear-gradient(to right, #9fc0c8 0%, #d1bbc3 100%);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}

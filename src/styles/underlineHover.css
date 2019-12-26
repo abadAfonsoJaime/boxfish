@@ -1,0 +1,8 @@
+.underlineHover {
+  font-weight: bold;
+  color: #9fc0c8;
+  text-decoration: none;
+}
+.underlineHover:hover {
+  text-decoration: underline;
+}

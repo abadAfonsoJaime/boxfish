@@ -1,13 +1,13 @@
 import React from "react";
 
-import { AppBar, Fab, Toolbar } from "@material-ui/core";
+import { AppBar, Box, Fab, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 import ScrollTop from "./ScrollTop";
 import ToolbarContent from "./ToolbarContent";
 /* REACT ROUTER NAVIGATION */
-import NavigationRouter from "../../navigation/NavigationRouter";
+import Routing from "../../navigation/Routing";
 
 export default function Navbar(props) {
   const useStyles = makeStyles({
@@ -20,21 +20,19 @@ export default function Navbar(props) {
     <React.Fragment>
       <header>
         <AppBar className={classes.navbar}>
-          <ToolbarContent />
+          <Box zIndex="tooltip">
+            <ToolbarContent />
+          </Box>
         </AppBar>
       </header>
       <Toolbar id="back-to-top-anchor" />
       {/* REACT ROUTER NAVIGATION */}
       <main style={{ marginTop: 50 }}>
-        <NavigationRouter />
+        <Routing />
       </main>
       {/* Button for scrolling back to top */}
       <ScrollTop {...props}>
-        <Fab
-          // color={`${theme.palette.secondary.contastText}`}
-          color="secondary"
-          aria-label="scroll back to top"
-        >
+        <Fab aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>

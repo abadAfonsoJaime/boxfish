@@ -1,7 +1,7 @@
 import React from "react";
+import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSpring, animated } from "react-spring";
-import { Box } from "@material-ui/core";
 
 import Title from "./title";
 import Subtitle from "./subtitle";
@@ -23,11 +23,6 @@ function AnimatedHomePage() {
         width: "70%",
         margin: "15px auto"
       }
-    },
-    content: {
-      display: "flex",
-      //alignItems: "center",
-      justifyContent: "space-between"
     },
     titleBox: {
       [theme.breakpoints.down("sm")]: {
@@ -55,14 +50,13 @@ function AnimatedHomePage() {
       top: 10,
       transform: "scaleY(1)"
     },
-    config: { duration: 500 },
+    config: { duration: 700 },
     delay: 1000
   });
   const fadeParticles = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    //config: { duration: 400 },
-    delay: 3500
+    delay: 4000
   });
 
   return (
@@ -75,21 +69,13 @@ function AnimatedHomePage() {
         </animated.div>
       </div>
       <div className={classes.responsive}>
-        <div
-          // style={{
-          //   borderStyle: "dashed",
-          //   borderWidth: "1px",
-          //   borderColor: "red"
-          // }}
-          className={classes.content}
-        >
-          <Box zIndex="tooltip">
+        <div style={{ position: "relative" }}>
+          <Box>
             <animated.div style={growLetters} className={classes.titleBox}>
               <Title>
                 <span>without</span>
               </Title>
             </animated.div>
-
             <animated.div style={growLetters} className={classes.titleBox}>
               <Title>
                 <AnimatedLineThrough
@@ -106,9 +92,14 @@ function AnimatedHomePage() {
               </Subtitle>
             </animated.div>
           </Box>
-          <animated.div style={fadeParticles}>
-            <CustomParticles />
-          </animated.div>
+          <Box
+            zIndex="modal"
+            style={{ position: "absolute", top: -10, left: "50%" }}
+          >
+            <animated.div style={fadeParticles}>
+              <CustomParticles />
+            </animated.div>
+          </Box>
         </div>
       </div>
     </div>

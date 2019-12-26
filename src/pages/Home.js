@@ -1,62 +1,34 @@
 import React from "react";
-
+import { makeStyles } from "@material-ui/core/styles";
 import { useSpring, animated } from "react-spring";
-import { Box, Container, Typography } from "@material-ui/core";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
-// import AbsoluteWrapper from "../components/AbsoluteWrapper";
 import AnimatedHomePage from "../components/AnimatedHomePage";
-import CustomLink from "../components/common/customLink";
-
-import SoftwareImage from "../assets/software.png";
-import HardwareImage from "../assets/hardware.png";
-import WebImage from "../assets/web.png";
-
-import Footer from "../components/footer";
-import HoverLetters from "../components/hoverLetters";
+import { About, Contact, Work } from "../pages";
+import Collabs from "../components/Collabs";
+import Footer from "../components/Footer";
 
 function Home() {
+  const useStyles = makeStyles({
+    container: { marginTop: "100px" }
+  });
+  const classes = useStyles();
   const fadeRest = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    //config: { duration: 400 },
-    delay: 1000
+    delay: 3500
   });
   return (
     <>
       <AnimatedHomePage />
-      <animated.div style={fadeRest}>
-        <Container>
-          <CustomLink href="/work" text="Work" />
-          <CustomLink href="/about" text="About" />
-          <CustomLink href="/career" text="Career" />
-          <CustomLink href="/contact" text="Contact" />
-        </Container>
-        <div style={{ paddingBottom: "200px" }}>
-          <HoverLetters
-            hoverClasses="slide-right"
-            mouseOutClasses="slide-left"
-            letters={[...new Array(20)].map(() => "software").join(" ")}
-            image={SoftwareImage}
-          />
-          <HoverLetters
-            hoverClasses="slide-left"
-            mouseOutClasses="slide-right"
-            letters={[...new Array(20)].map(() => "hardware").join(" ")}
-            image={HardwareImage}
-          />
-          <HoverLetters
-            hoverClasses="slide-right"
-            mouseOutClasses="slide-left"
-            letters={[...new Array(35)].map(() => "web").join(" ")}
-            image={WebImage}
-          />
-        </div>
-
+      <animated.div style={fadeRest} className={classes.container}>
+        <Work />
+        <About />
+        <br />
+        <Collabs />
+        <br />
+        <Contact />
         <br />
         <br />
-
         <Footer />
       </animated.div>
     </>
