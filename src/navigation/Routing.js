@@ -13,7 +13,7 @@ export default function Routing() {
         <Route path="/not-found" component={NotFound} />
         <Route path="/home" component={Home} />
         <Redirect exact from="/" to="/home" />
-        <Redirect from="/" to="/not-found" />
+        {/* <Redirect from="/" to="/not-found" /> */}
       </Switch>
     </div>
   );
