@@ -9,11 +9,11 @@ export default function Routing() {
         <Route path="/about" component={About} />
         <Route path="/career" component={Career} />
         <Route path="/contact" component={Contact} />
-        <Route path="/home" component={Home} />
         <Route path="/work" component={Work} />
         <Route path="/not-found" component={NotFound} />
-        <Redirect exact from="/" to="/home" />
-        <Redirect from="/" to="/not-found" />
+        <Route exact path="/" component={Home} />
+        {/* <Redirect exact from="/" to="/home" /> */}
+        {/* <Redirect from="/" to="/not-found" /> */}
       </Switch>
     </div>
   );

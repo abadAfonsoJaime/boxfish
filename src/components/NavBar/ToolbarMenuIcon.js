@@ -1,6 +1,6 @@
 import React from "react";
 
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { Menu, IconButton } from "@material-ui/core";
 import { Menu as MenuIcon } from "@material-ui/icons";
 
@@ -20,7 +20,7 @@ function ToolbarMenuIcon(props) {
   const classes = useStyles();
 
   const open = Boolean(anchorEl);
-  console.log("open --> ", open);
+  //console.log("open --> ", open);
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
@@ -34,7 +34,7 @@ function ToolbarMenuIcon(props) {
     children.map(child => menuItems.push(child));
     return menuItems;
   };
-  console.log("anchorEl: ", anchorEl);
+  //console.log("anchorEl: ", anchorEl);
   return (
     <div className={classes.buttonCollapse}>
       <IconButton onClick={handleMenu} color="secondary" aria-label="Menu">

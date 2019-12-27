@@ -43,7 +43,7 @@ function HoverLetters({ hoverClasses, mouseOutClasses, letters, image }) {
     },
     showImage: {
       position: "absolute",
-      top: theme.spacing(-13),
+      top: theme.spacing(-14),
       right: theme.spacing(10)
     },
     hideImage: {

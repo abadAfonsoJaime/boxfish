@@ -31,7 +31,6 @@ function ToolbarContent() {
         </div>
         <ToolbarMenu
           render={collapsed => {
-            console.log("collapsed --> ", collapsed);
             return collapsed
               ? [
                   <MenuItem
