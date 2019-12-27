@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "63ab1ddb98a781c132f110350abf90d7",
+    "revision": "5d51c714e3414b26394497678160fc91",
     "url": "/boxfish/index.html"
   },
   {
-    "revision": "9f1b64af7f6e9e8dabcc",
+    "revision": "025d6a3861a6c5bf746e",
     "url": "/boxfish/static/css/main.43e57e70.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/boxfish/static/js/2.b1278bc6.chunk.js"
   },
   {
-    "revision": "9f1b64af7f6e9e8dabcc",
-    "url": "/boxfish/static/js/main.8cba0b83.chunk.js"
+    "revision": "025d6a3861a6c5bf746e",
+    "url": "/boxfish/static/js/main.46b65ee0.chunk.js"
   },
   {
     "revision": "25fffbc3806f5fe95489",
