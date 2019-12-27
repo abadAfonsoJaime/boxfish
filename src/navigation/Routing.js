@@ -11,9 +11,9 @@ export default function Routing() {
         <Route path="/contact" component={Contact} />
         <Route path="/work" component={Work} />
         <Route path="/not-found" component={NotFound} />
-        <Route exact path="/" component={Home} />
-        {/* <Redirect exact from="/" to="/home" /> */}
-        {/* <Redirect from="/" to="/not-found" /> */}
+        <Route path="/home" component={Home} />
+        <Redirect exact from="/" to="/home" />
+        <Redirect from="/" to="/not-found" />
       </Switch>
     </div>
   );
