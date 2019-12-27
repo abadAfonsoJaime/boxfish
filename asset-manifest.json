@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/boxfish/static/css/main.43e57e70.chunk.css",
+    "main.js": "/boxfish/static/js/main.65e4222c.chunk.js",
+    "main.js.map": "/boxfish/static/js/main.65e4222c.chunk.js.map",
+    "runtime-main.js": "/boxfish/static/js/runtime-main.779b264f.js",
+    "runtime-main.js.map": "/boxfish/static/js/runtime-main.779b264f.js.map",
+    "static/js/2.b1278bc6.chunk.js": "/boxfish/static/js/2.b1278bc6.chunk.js",
+    "static/js/2.b1278bc6.chunk.js.map": "/boxfish/static/js/2.b1278bc6.chunk.js.map",
+    "index.html": "/boxfish/index.html",
+    "precache-manifest.f0e3755a5728217cdc6b10391001361f.js": "/boxfish/precache-manifest.f0e3755a5728217cdc6b10391001361f.js",
+    "service-worker.js": "/boxfish/service-worker.js",
+    "static/css/main.43e57e70.chunk.css.map": "/boxfish/static/css/main.43e57e70.chunk.css.map",
+    "static/media/3dforscience_logo_black150.png": "/boxfish/static/media/3dforscience_logo_black150.8a00a0ba.png",
+    "static/media/founders.png": "/boxfish/static/media/founders.71ccc95d.png",
+    "static/media/hardware.png": "/boxfish/static/media/hardware.709977b1.png",
+    "static/media/logo.png": "/boxfish/static/media/logo.30553820.png",
+    "static/media/software.png": "/boxfish/static/media/software.56da28b5.png",
+    "static/media/web.png": "/boxfish/static/media/web.5e258fca.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.779b264f.js",
+    "static/js/2.b1278bc6.chunk.js",
+    "static/css/main.43e57e70.chunk.css",
+    "static/js/main.65e4222c.chunk.js"
+  ]
+}
